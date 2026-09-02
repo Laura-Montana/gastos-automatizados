@@ -64,7 +64,7 @@ def obtener_correos_recientes(remitente_filtro: str) -> list:
     mail.select('"[Gmail]/All Mail"')
 
     # 2. Usamos X-GM-RAW con la consulta encerrada en comillas dobles
-    query = f'"from:{remitente_filtro} newer_than:90d"'
+    query = f'"from:{remitente_filtro} newer_than:2d"'
     status, mensajes = mail.search(None, "X-GM-RAW", query)
     
     correos = []
@@ -109,7 +109,7 @@ if __name__ == "__main__":
         correos_cuenta = obtener_correos_recientes(remitente)
         todos_los_correos.extend(correos_cuenta)
         
-    print(f"\n✅ {len(todos_los_correos)} correos encontrados en total.")
+    print(f"\n {len(todos_los_correos)} correos encontrados en total.")
 
     # Muestra una pequeña muestra de los primeros 3 encontrados en general
     for i, c in enumerate(todos_los_correos[:3], 1):
