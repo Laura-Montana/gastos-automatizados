@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#073042"          # Cambia el color primario (rojo -> azul oscuro)
+backgroundColor = "#FBFBFB"       # Fondo general
+secondaryBackgroundColor = "#F7F6F3" # Fondo del sidebar
+textColor = "#37352F"             # Color de texto principal
+font = "sans serif"

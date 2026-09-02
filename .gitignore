@@ -1,0 +1,14 @@
+# Ignorar variables de entorno
+.env
+# Entorno virtual
+venv/
+env/
+# Ignorar credenciales de Gmail
+credentials.json
+# Archivos compilados y caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+# Archivos de Streamlit
+.streamlit/secrets.toml
