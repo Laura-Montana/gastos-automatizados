@@ -209,10 +209,9 @@ def main():
             fecha_inicio_val = min_date
             fecha_fin_val = max_date
 
-        # Ajustamos los límites permitidos para los Selectores de Fecha de Streamlit
-        # (Para evitar que la app crashee si hoy_real no está dentro del rango min_date/max_date del CSV)
-        min_date_input = min(min_date, hoy_real)
-        max_date_input = max(max_date, hoy_real)
+        # Ajustamos los límites permitidos para que acepten fechas anteriores si se eligen los últimos 6 meses
+        min_date_input = min(min_date, hoy_real, fecha_inicio_val)
+        max_date_input = max(max_date, hoy_real, fecha_fin_val)
             
         fecha_inicio = st.date_input("Fecha inicial", fecha_inicio_val, min_value=min_date_input, max_value=max_date_input)
         fecha_fin = st.date_input("Fecha final", fecha_fin_val, min_value=min_date_input, max_value=max_date_input)
